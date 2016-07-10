@@ -1,0 +1,43 @@
+******************************
+READ ME
+Anthor: Honglei Wu
+******************************
+
+*************
+Main function
+*************
+This is Web application that have following function:
+1. add employee by CSV file
+2. filter informations of employees
+
+
+*************
+Alchitecture
+*************
+This sample code cover from frontend, backend to database. 
+1. Front end:
+	Use angularJS as frontend framework. This part of Code locates in resources/views/dashboard,public/css,public/html, public/js, public/lib 
+2. Back end:
+	Use Laravel 5 as backend framework. This part of Code locates in app/Http/Controllers/employeeController.php, app/card.php(model), app/Employee.php(model)
+3. DataBase:
+	MySQL. This part of code is done above at Backend model files.
+
+
+
+*************
+Run
+*************
+1.Dependencies:
+	Make sure have PHP and MySQL, composer, installed on your computer
+2.Migrate model to your DataBase
+	1. Create a dataBase named "mydb", with username "root" and password "root"(Or you can config sample/.env according to your database setting)
+	2. In terminal or cmd, go inside directory "sample/" and run "composer install"
+	3. In terminal or cmd, go inside directory "sample/" and run "php artisan migrate"
+2.In terminal or cmd, go inside directory "sample/" and run "php artisan serve"  to start server.
+3.Open Browser and go to "localhost:8000" to see this web application
+
+
+************
+Others
+************
+There is a file called batchadd.csv in sample/, that is a test file you can use to add bunch of employees by this application.

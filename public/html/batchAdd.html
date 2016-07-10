@@ -1,0 +1,15 @@
+<form name="uploadbatchfile" ng-controller="uploadFileCtrl">
+				<fieldset>
+					<legend>Upload CSV File</legend>
+					<input type="file", ngf-select ng-model="batchFile" name="file" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
+					<i ng-show="uploadbatchfile.file.$error.required"></i>
+					<i ng-show="uploadbatchfile.file.$error.maxSize">File too large{{errorFile.size / 1000000|number:1}}MB:max 2M</i>
+					<br>
+					<button ng-disabled="!uploadbatchfile.$valid" ng-click="uploadFile(batchFile)">Submit</button>
+					<span class="progress" ng-show="batchFile.progress >= 0">
+						<div style="width:{{batchFile.progress}}%" ng-bind="batchFile.progress + '%'"></div>
+					</span>
+					<span ng-show="batchFile.result">Upload Successful</span>
+					<span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+				</fieldset>
+	</form>

@@ -1,0 +1,16 @@
+table {
+	width: 100%;
+}
+
+thead th {
+	height: 30px;
+}
+
+
+tbody td, thead th {
+	text-align: center;
+}
+
+tbody td {
+	font-size: small;
+}

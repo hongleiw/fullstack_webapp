@@ -1,0 +1,41 @@
+<table>
+	<thead>
+		<tr>
+			<th>Employee Number</th>
+			<th>Employee Name</th>
+			<th>Gender</th>
+			<th>Card Number</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<input type="text" ng-model="s_employee_number"/>
+			</td>
+			<td>
+				<input type="text" ng-model="s_employee_name"/>
+			</td>
+			<td>
+				<md-input-container>
+					<md-select ng-model="s_gender">
+						<md-option value=null></md-option>
+						<md-option ng-repeat="g_option in gender_choice" value="{{g_option}}">
+							{{g_option}}
+						</md-option>
+					</md-select>
+				</md-input-container>
+			</td>
+			<td>
+				<input type="text" ng-model="s_card_number"/>
+			</td>
+		</tr>
+		<tr ng-repeat="contact in contactList | filter : { employee_number:s_employee_number, employee_name:s_employee_name, gender:s_gender} | filtercard : s_card_number" stype="margin-bottom: 30px;">
+			<td>{{contact.employee_number}}</td>
+			<td>{{contact.employee_name}}</td>
+			<td>{{contact.gender}}</td>
+			<td>
+				<span ng-repeat="card_number in contact.card_numbers">{{card_number}}<br/></span>
+			</td>
+		</tr>
+	</tbody>
+</table>
